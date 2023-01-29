@@ -1,0 +1,13 @@
+{
+    "LOGIN" : "/login",
+    "USER_ENTRY": "/userentry",
+    "USER_ENTRY_FILE" : "/userentryfile",
+    "DATA" : "/data",
+    "PROGRESS_PER_CONTEST" : "/progresspercontest",
+    "PROFILE" : "/profile",
+    "USERS" : "/users",
+    "TRANSCRIPT" : "/transcript",
+    "CONTEST" : "/contest",
+    "USER" : "/user",
+    "RESOURCES" : "/resources"
+}

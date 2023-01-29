@@ -8,6 +8,7 @@ import { LOGIN } from "../../backend_urls"
 
 function Login() {
     const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const { search } = useLocation();
@@ -19,8 +20,9 @@ function Login() {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+        setLoading(true)
         try {
-            const { data } = await axios.post("http://localhost:5000/api/users/signin",
+            const { data } = await axios.post("http://localhost:5000/login",
                 {
                     email,
                     password,
@@ -67,10 +69,14 @@ function Login() {
                         />
                     </div>
                 </div>
-
-                <div className="flex flex-col">
-                    <button className='py-2 px-6 text-white rounded bg-violet-500' type="submit">Sign In</button>
-                </div>
+                {loading?(<div className="flex flex-col">
+                    <button className='py-2 px-6 text-white rounded bg-gray-500' type="submit">Signing In</button>
+                </div>):
+                    <div className="flex flex-col">
+                        <button className='py-2 px-6 text-white rounded bg-violet-500' type="submit">Sign In</button>
+                    </div>
+                }
+                
             </form>
         </div>
     );
